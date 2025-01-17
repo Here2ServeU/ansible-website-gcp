@@ -1,0 +1,19 @@
+all:
+  hosts:
+    ansible-controller:
+      ansible_host: <Controller-IP-Address>  # Replace with the controller's external IP address
+      ansible_user: ubuntu
+      ansible_ssh_private_key_file: ~/.ssh/ansible-controller-key
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+
+    worker-node-debian:
+      ansible_host: <Worker-Node-Debian-IP-Address>  # Replace with the worker node's external IP address
+      ansible_user: debian
+      ansible_ssh_private_key_file: ~/.ssh/ansible-controller-key
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+
+    worker-node-ubuntu:
+      ansible_host: <Worker-Node-Ubuntu-IP-Address>  # Replace with the worker node's external IP address
+      ansible_user: ubuntu
+      ansible_ssh_private_key_file: ~/.ssh/ansible-controller-key
+      ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
